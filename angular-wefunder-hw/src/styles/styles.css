@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Global colors */
+:root {
+  --primary-color: #3077b8;
+  --secondary-color: #db5a48;
+  --background-color: #f7f8fb;
+  --border-color: #eff2f7;
+  --dark-text-color: #16263d;
+  --light-text-color: #657285;
+  --success: #60c49a;
+  --nav-height: 65px;
+
+  /* slideshow */
+  --sh-width: 50vw;
+  /* 0.5625% of parent width for 16:9 */
+  --sh-height: 28.125vw;
+}
+
+body {
+  margin: 0;
+}
+
+/* Global fonts */
+
+h1 {
+  font-weight: 700;
+  color: var(--dark-text-color);
+  font-family: "Inter", sans-serif;
+  font-size: 4rem;
+}
+
+h2 {
+  font-weight: 700;
+  color: var(--dark-text-color);
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  margin: 0 0 16px 0;
+}
+
+p {
+  color: var(--light-text-color);
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+a {
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+h3 {
+  font-family: "Inter", sans-serif;
+  color: var(--dark-text-color);
+}
+
+label {
+  font-family: "Inter", sans-serif;
+  color: var(--dark-text-color);
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  color: var(--dark-text-color);
+}
+
+.form-section {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section:first-of-type {
+  margin-top: initial;
+}
+
+.error {
+  color: red;
+  margin-top: 4px;
+  font-family: "Inter", sans-serif;
+}

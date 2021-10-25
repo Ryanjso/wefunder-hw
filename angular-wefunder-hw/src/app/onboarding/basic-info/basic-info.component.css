@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+  min-height: 200px;
+}

@@ -1,0 +1,76 @@
+<h2>Upload pitch deck</h2>
+
+<div>
+  <!--     accept=".pdf" -->
+  <ngx-file-drop
+    dropZoneLabel="Drop files here"
+    dropZoneClassName="dropbox"
+    (onFileDrop)="dropped($event)"
+    accept=".pdf,.pptx,.ppt,.doc,.docx"
+    [multiple]="false"
+  >
+    <ng-template
+      ngx-file-drop-content-tmp
+      let-openFileSelector="openFileSelector"
+    >
+      <div class="upload">
+        <div *ngIf="!this.fileUploadLoading" class="upload-center">
+          <div
+            *ngIf="this.onboardingService.company.deck.length > 0"
+            class="upload-center"
+          >
+            <img src="../../../assets/check.svg" alt="green check mark" />
+            <p>
+              Success! Your
+              <span>{{ this.onboardingService.company.deck.length }}</span> page
+              pitch deck is ready to go.
+            </p>
+            <p class="info" id="change">Want to use a different deck?</p>
+            <label for="fileDrop">Change</label>
+          </div>
+
+          <div
+            *ngIf="this.onboardingService.company.deck.length === 0"
+            class="upload-center"
+          >
+            <p>Drop your file here or <label for="fileDrop">Browse</label></p>
+            <p class="info">Max file size 50mb, Types: PDF, PPT, or DOC</p>
+          </div>
+        </div>
+
+        <div *ngIf="this.fileUploadLoading" class="upload-center">
+          <!-- loader from https://loading.io/css/ -->
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <p>Uploading, one moment please.</p>
+          <p>{{ filename }}</p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="fileButton"
+        id="fileDrop"
+        (click)="openFileSelector()"
+      >
+        Browse Files
+      </button>
+    </ng-template>
+  </ngx-file-drop>
+</div>
+<span
+  class="error"
+  *ngIf="nextPageAttempted && this.onboardingService.company.deck.length === 0"
+  >Please upload a deck before continouing</span
+>
+<span class="error">{{ errorMessage }}</span>
+
+<app-nav-btns (nextPage)="nextPage()"></app-nav-btns>

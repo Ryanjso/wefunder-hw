@@ -1,0 +1,37 @@
+.upload-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-center > img {
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.upload p {
+  margin: 8px 0;
+}
+
+#change {
+  margin-top: 24px;
+}
+
+.upload label {
+  cursor: pointer;
+}
+
+.upload label,
+.upload p > span {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.upload .info {
+  font-size: 14px;
+}
+
+.fileButton {
+  display: none;
+}

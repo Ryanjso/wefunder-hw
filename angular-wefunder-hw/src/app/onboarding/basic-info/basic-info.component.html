@@ -1,0 +1,21 @@
+<h2>Basic Info</h2>
+
+<form [formGroup]="basicInfoForm">
+  <div class="form-section">
+    <label for="name">Company name</label>
+    <input type="text" id="name" formControlName="name" />
+    <span class="error" *ngIf="this.attempedToSubmitForm && name.invalid"
+      >Company name is required</span
+    >
+  </div>
+
+  <div class="form-section">
+    <label for="description">Short company description</label>
+    <textarea name="" id="description" formControlName="description"></textarea>
+    <span class="error" *ngIf="this.attempedToSubmitForm && description.invalid"
+      >Company description is required</span
+    >
+  </div>
+</form>
+
+<app-nav-btns (nextPage)="nextPage()"></app-nav-btns>

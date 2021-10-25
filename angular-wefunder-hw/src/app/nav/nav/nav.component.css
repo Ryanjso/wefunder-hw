@@ -1,0 +1,11 @@
+.nav {
+  height: var(--nav-height);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.nav > img {
+  height: 35px;
+  margin-left: 20px;
+}

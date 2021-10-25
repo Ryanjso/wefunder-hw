@@ -1,0 +1,23 @@
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0 0 0;
+}
+.nav-btns button {
+  min-width: 150px;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.prev {
+  background-color: var(--border-color);
+  color: var(--dark-text-color);
+}
+
+.next {
+  background-color: var(--success);
+  color: white;
+}

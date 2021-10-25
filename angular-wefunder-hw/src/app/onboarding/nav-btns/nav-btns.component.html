@@ -1,0 +1,12 @@
+<div class="nav-btns">
+  <div>
+    <button class="prev" *ngIf="!isFirstPage()" (click)="goBack()">
+      PREVIOUS
+    </button>
+  </div>
+  <div>
+    <button class="next" (click)="next()">
+      {{ isLastPage() ? "PUBLISH" : "NEXT" }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="holder">
+  <h2>{{ company.name }}</h2>
+  <div class="sh-container">
+    <p class="slide-count">
+      Slide {{ currentSlide }} of {{ imageUrlArray.length }}
+    </p>
+    <div class="slideshow">
+      <div class="arrows">
+        <div>
+          <div
+            id="left"
+            class="left"
+            (click)="goToPrev()"
+            *ngIf="currentSlide !== 1"
+          ></div>
+        </div>
+        <div>
+          <div
+            id="right"
+            (click)="goToNext()"
+            *ngIf="currentSlide !== imageUrlArray.length"
+          ></div>
+        </div>
+      </div>
+      <ngb-carousel
+        (slide)="slideActivate($event)"
+        #ngcarousel
+        [interval]="0"
+        [animation]="false"
+        [showNavigationArrows]="false"
+        [wrap]="false"
+      >
+        <ng-template
+          ngbSlide
+          *ngFor="let img of imageUrlArray; let i = index"
+          id="{{ i.toString() }}"
+        >
+          <div class="testy">
+            <img src="{{ img.url }}" alt="Slide {{ i }}" />
+          </div>
+        </ng-template>
+
+        <button (click)="goToPrev()">Prev</button>
+      </ngb-carousel>
+    </div>
+    <div class="thumbnails">
+      <div class="slide-buttons">
+        <button class="left" (click)="scrollToSide('left')"></button>
+        <button (click)="scrollToSide('right')"></button>
+      </div>
+      <div class="scroller" id="scroller">
+        <div
+          *ngFor="let img of imageUrlArray; let i = index"
+          (click)="navigateToSlide(i)"
+          [ngClass]="{ selected: i === currentSlide - 1 }"
+        >
+          <img src="{{ img.url }}" alt="Slide {{ i }}" id="thumbnail{{ i }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="desc">{{ company.description }}</p>
+</div>

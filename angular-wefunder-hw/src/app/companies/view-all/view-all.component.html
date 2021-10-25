@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="no-comps" *ngIf="companies.length === 0">
+    <p>There are currently no companies raising money</p>
+    <a routerLink="/raise">Raise money</a>
+  </div>
+  <div class="grid-cont">
+    <div
+      *ngFor="let company of companies"
+      (click)="goToSinglePage(company._id)"
+    >
+      <div class="img-holder">
+        <img
+          src="{{ company.deck[0].imgUrl }}"
+          alt="Slide 1 of {{ company.name }} deck"
+        />
+      </div>
+      <div class="title-holder">
+        <h3>{{ company.name }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

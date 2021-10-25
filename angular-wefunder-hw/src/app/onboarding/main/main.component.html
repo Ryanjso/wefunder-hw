@@ -1,0 +1,44 @@
+<div class="m-container">
+  <div class="sidebar">
+    <div class="numbers">
+      <div
+        *ngFor="let page of onboardingService.pages; index as i"
+        [ngClass]="{ 'current-page': page == onboardingService.currentView }"
+      >
+        <p>{{ i + 1 }}</p>
+      </div>
+    </div>
+    <div class="dash"></div>
+    <div class="content">
+      <img
+        src="../../../assets/{{ slideContent.img?.fileName }}"
+        alt="{{ slideContent.img?.alt }}"
+      />
+      <h3>{{ slideContent.title }}</h3>
+      <p>{{ slideContent.content }}</p>
+    </div>
+    <div class="dash"></div>
+    <div class="contact">
+      <h3>Have questions?</h3>
+      <a href="mailto:hello@wefunder.com">hello@wefunder.com</a>
+    </div>
+  </div>
+  <div class="component-holder">
+    <!-- Stage of flow -->
+    <app-basic-info
+      (newSlide)="setSlideContent($event)"
+      *ngIf="onboardingService.currentView === 'basic-info'"
+    ></app-basic-info>
+
+    <app-upload-deck
+      (newSlide)="setSlideContent($event)"
+      *ngIf="onboardingService.currentView === 'upload-deck'"
+    >
+    </app-upload-deck>
+
+    <app-preview
+      (newSlide)="setSlideContent($event)"
+      *ngIf="onboardingService.currentView === 'preview'"
+    ></app-preview>
+  </div>
+</div>

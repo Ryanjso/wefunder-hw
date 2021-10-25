@@ -1,0 +1,129 @@
+.holder {
+  padding: 50px 15vw 32px 10vw;
+}
+
+h2 {
+  margin: 0;
+}
+
+.sh-container {
+  width: var(--sh-width);
+}
+
+.slideshow {
+  position: relative;
+  height: var(--sh-height);
+}
+
+.arrows {
+  width: 120%;
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrows > div > div {
+  height: 36px;
+  width: 36px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url(../../../assets/right_chevron.svg);
+}
+
+.left {
+  transform: scaleX(-1);
+}
+.testy {
+  width: var(--sh-width);
+  height: var(--sh-height);
+  background-color: var(--border-color);
+  display: flex;
+  justify-content: center;
+}
+
+.testy > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.thumbnails {
+  border-radius: 8px;
+  margin-top: 16px;
+  background-color: var(--border-color);
+  height: 70px;
+  box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.04);
+  /* position: relative; */
+}
+
+.thumbnails:hover .slide-buttons {
+  visibility: visible;
+}
+
+.slide-buttons {
+  position: relative;
+  width: 100%;
+  visibility: hidden;
+}
+
+.slide-buttons > button {
+  height: 70px;
+  width: 28px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: var(--dark-text-color);
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets//white_chevron_right.svg);
+  border-radius: 0 8px 8px 0;
+  position: absolute;
+  right: 0;
+}
+
+.slide-buttons .left {
+  left: 0;
+}
+
+.desc {
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+.slide-count {
+  margin: 0 0 8px 0;
+  text-align: right;
+}
+
+.scroller {
+  /* background-color: aquamarine; */
+  z-index: 2;
+  overflow: auto;
+  white-space: nowrap;
+  width: var(--sh-width);
+  padding: 5px;
+  scroll-behavior: smooth;
+}
+
+.scroller > div {
+  display: inline-block;
+  height: 60px;
+  background-color: var(--secondary-color);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.scroller > div > img {
+  max-height: 100%;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.05);
+}
+
+.selected {
+  border: 2px solid var(--secondary-color);
+}

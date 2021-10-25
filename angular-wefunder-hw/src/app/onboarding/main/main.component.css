@@ -1,0 +1,98 @@
+.m-container {
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.sidebar {
+  width: 30%;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+}
+
+.numbers {
+  display: flex;
+}
+
+.numbers > div {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.numbers > div > p {
+  margin: 0;
+}
+
+.current-page {
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.current-page > p {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.component-holder {
+  width: 70%;
+  box-sizing: border-box;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.child-page {
+  flex-grow: 1;
+}
+
+.dash {
+  width: 50px;
+  border-bottom: 4px solid var(--dark-text-color);
+  opacity: 0.1;
+  margin: 36px 0;
+}
+
+.content {
+  flex-grow: 1;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content > img {
+  height: 84px;
+}
+
+.content > h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact > h3 {
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+.contact > a {
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-weight: 400;
+}

@@ -1,0 +1,18 @@
+<h2>Preview your company page</h2>
+
+<div class="preview">
+  <div class="top-bar">
+    <div class="circles">
+      <div id="red"></div>
+      <div id="yellow"></div>
+      <div id="green"></div>
+    </div>
+  </div>
+  <div class="content">
+    <app-individual-profile
+      [companyId]="onboardingService.company._id"
+    ></app-individual-profile>
+  </div>
+</div>
+
+<app-nav-btns (nextPage)="publish()"></app-nav-btns>
