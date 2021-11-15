@@ -25,7 +25,7 @@ router.post('/newCompany', async (req, res) => {
 /**
  * Converts file to images and adds deck to company
  */
-router.put('/addDeck/:companyId', fileUpload(), async (req, res) => {
+router.patch('/addDeck/:companyId', fileUpload(), async (req, res) => {
   const deck = req.files.deck;
   const { data: buffer, name: fileName } = deck;
   const fileType = getFileType(fileName);
@@ -42,7 +42,7 @@ router.put('/addDeck/:companyId', fileUpload(), async (req, res) => {
 /**
  * Modifies company and returns result
  */
-router.put('/modify/:companyId', async (req, res) => {
+router.patch('/modify/:companyId', async (req, res) => {
   const companyId = req.params.companyId;
   const payload = req.body;
 

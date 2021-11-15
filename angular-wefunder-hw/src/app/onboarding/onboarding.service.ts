@@ -54,7 +54,7 @@ export class OnboardingService {
    * @returns modified company object
    */
   uploadDeck(companyId: string, formData: FormData) {
-    return this.http.put<Company>(
+    return this.http.patch<Company>(
       this.serverUrl + 'company/addDeck/' + companyId,
       formData
     );
@@ -64,7 +64,7 @@ export class OnboardingService {
    * updates company and returns updated company
    */
   updateCompany(companyId: string, payload: Partial<Company>) {
-    return this.http.put<Company>(
+    return this.http.patch<Company>(
       this.serverUrl + 'company/modify/' + companyId,
       payload
     );
